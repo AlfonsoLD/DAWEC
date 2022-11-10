@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario" action="#">
+        <fieldset>
+            <legend>Contacto</legend>
+            <label class="nombre" for="nombre">Nombre <em>*</em></label>
+            <input id="nombre" required><br>
+
+            <label class="apellidos" for="apellidos">Apellidos <em>*</em></label>
+            <input id="apellidos" required><br>
+
+            <label class="fechanac" for="fechanac">Fecha de Nacimiento</label>
+            <input type="date" id="fechanac" placeholder="dd-mm-yyyy" required><em>*</em><br>
+
+            <label class="contacto" for="email">Email <em>*</em></label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required><br>
+
+            <label class="usuario" for="usuario">Usuario<em>*</em></label>
+            <input id="usuario" required><br>
+
+            <label class="password" for="password">Contraseña<em>*</em></label>
+            <input type="password" id="password" required><br>
+
+            <label class="url" for="url">Web Url<em>*</em></label>
+            <input type="url" id="url"><br>
+        </fieldset>
+    </form>
+
+    <script>
+        const $FORM = document.getElementById('formulario');
+        const $NAME = document.getElementById('nombre');
+        const $SURNAME = document.getElementById('apellidos');
+        const $EMAIL = document.getElementById('email');
+        const $WEB = document.getElementById('url');
+
+        function handleSubmit(e) {
+
+            e.preventDefault();
+
+            const name = $NAME.value;
+            const surname = $SURNAME.value;
+            const email = $EMAIL.value;
+            const web = $WEB.value;
+
+            if (name == false || isValidText(name) == false) {
+                alert('El nombre no es válido :' +
+                    '\n -Debe estar relleno' +
+                    '\n -Debe estar compuesto por 1 o 2 palabras');
+            } else {
+                if (surname == false || isValidText(surname) == false) {
+                    alert('El apellido no es válido :' +
+                        '\n -Debe estar relleno' +
+                        '\n -Debe estar compuesto por 1 o 2 palabras');
+                } else {
+                    if (email == false || isValidEmail(email) == false) {
+                        alert('El correo no es válido :' +
+                            '\n -Debe estar relleno' +
+                            '\n -Debe tener siguiente formato: xxxxxx@yyyyy.zzz');
+                    } else {
+                        if (web == false || isValidWeb(web) == false) {
+                            alert('La web no es válida :' +
+                                '\n -Debe estar rellena' +
+                                '\n -Debe tener siguiente formato: http://www.xxxx.yyy');
+                        } else {
+                            var regUsuario = {
+                                nombre: name,
+                                apellido: surname,
+                                correo: email,
+                                web: web
+                            };
+                            console.log(regUsuario);
+                            var newUser = JSON.stringify(regUsuario);
+                            document.getElementById('newUser').innerHTML = newUser;
+                            console.log(newUser)
+                        }
+                    }
+                }
+            }
+        }
+
+        function isValidText(text) {
+            if (isNaN(text)) {
+
+                const validacion = /^(([\wáéíóúÁÉÍÓÚ]+)|([\wáéíóúÁÉÍÓÚ]+\s[\wáéíóúÁÉÍÓÚ]+))$/;
+                return validacion.test(text);
+
+            } else {
+                alert('Esto no es un nombre.')
+            }
+        }
+
+        function isValidEmail(email) {
+
+            const validacion = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+            return validacion.test(email);
+        }
+
+        function isValidWeb(web) {
+            const validacion = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
+            return validacion.test(web);
+        }
+
+
+        $FORM.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+
+</html>
