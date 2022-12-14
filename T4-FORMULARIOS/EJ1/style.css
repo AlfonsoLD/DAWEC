@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #4d77af;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select {
+  color: #ccc66c;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+.container {
+  color: #ddd457;
+  border: solid 3px #ccc66c;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+  text-align: center;
+}
+
+form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #ccc66c;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  border-bottom: solid 2px #ccc66c;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+label{
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #ddd457;
+}
+
+input[type='text'],[type='number'],select, [type='date']{
+	background: none;
+    border: none;
+	border-bottom: solid 2px #ccc66c;
+	color: #ccc66c;
+	font-size: 1.000em;
+    font-weight: 400;
+    letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+	width: 100%;
+    margin-top: 20px;
+}
+
+select{
+    margin-top: 10px;
+}
+
+input[type='radio']{
+    margin-left: 20px;
+}
+
+.submit{
+    padding-top: 20px;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #ccc66c;
+  color: #ccc66c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+}
+
+#form_button:hover {
+  background: #474544;
+  color: #F2F3EB;
+}

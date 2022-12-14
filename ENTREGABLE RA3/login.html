@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script src="validationejer4.js"></script>
+
+    <div id="container">
+        <form>
+            <!-- Usuario -->
+            <label for="username">Username:</label>
+            <input type="name" id="username">
+            <!-- Contraseña -->
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <div id="lower">
+                <!-- Enviar -->
+                <input type="checkbox" id="keeplogged"> Mantener sesion iniciada:</input>
+                <input type="submit" value="Login">
+            </div>
+        </form>       
+    </div>
+    <div id="pswd_info">
+        <h4>La contraseña debe cumplir los siguientes requerimientos:</h4>
+        <ul>
+          <li id="letter" class="invalid">Al menos <strong>un carácter especial</strong></li>
+          <li id="capital" class="invalid">Al menos <strong>una letra mayúscula</strong></li>
+          <li id="number" class="invalid">Al menos <strong>un número</strong></li>
+          <li id="passwordlength" class="invalid">Contraseña de al menos <strong>6 carácteres</strong></li>
+          <li id="userlength" class="invalid">Usuario de al menos <strong>3 carácteres</strong></li>
+          <li id="empty" class="invalid">El usuario y contraseña <strong>son obligatorios</strong></li>
+          <li id="userlower" class="invalid">El usuario <strong>es en minusculas</strong></li>
+        </ul>
+      </div>
+</body>
+</html>

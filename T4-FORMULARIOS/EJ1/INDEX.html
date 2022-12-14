@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">ALFONSO LÓPEZ DÍAZ</div>
+    <h1>&bull;DISCOS&bull;</h1>
+
+    <form name="formulario" id="formulario">
+        <label for="name">Nombre del disco:</label>
+        <input type="text" id="name">
+
+        <label for="singer">Nombre del grupo de música o cantante:</label>
+        <input type="text" id="cantante">
+
+        <label for="year">Año de publicación</label>
+        <input type="number" id="year">
+
+        <label for="genre">Genero:</label>
+        <select name="select" id="genre">
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+            <option value="punk">Punk</option>
+            <option value="indie">Indie</option>
+        </select>
+
+        <label for="location">Localización</label>
+        <input type="number" id="location">
+
+        <label for="shared">Prestado:</label>
+        <label for="false">No</label>
+        <input type="checkbox" id="false" name="shared" value="false">
+        <label for="true">Si</label>
+        <input type="checkbox" id="true" name="shared" value="true">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
